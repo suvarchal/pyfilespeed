@@ -16,7 +16,7 @@ def write_random(dstpath=".", size=100 * 1024 * 1024, block_size=1024 * 1024):
     # with tqdm.wrapattr(open(random_file, "wb"), "write", miniters=1, total=size, unit='B', unit_scale=True, unit_divisor=1024,
     #                   desc=f"Write: {random_file}") as fout:
     with open(random_file, "wb") as fout:
-        t = tqdm(total=size, miniters=1,
+        t = tqdm(total=size, miniters=1, smooth=0,
                   unit='B', unit_scale=True, unit_divisor=1024, desc=f"Write: {random_file}")
         fobj = CallbackIOWrapper(t.update, fout, "write")
         count = size
@@ -35,7 +35,7 @@ def write_random(dstpath=".", size=100 * 1024 * 1024, block_size=1024 * 1024):
 def read_random(src_file, block_size=1024 * 1024):
     size = os.stat(src_file).st_size
     with tqdm.wrapattr(open(src_file, "rb"), "read", miniters=1, total=size, unit='B', unit_scale=True,
-                       unit_divisor=1024,
+                       unit_divisor=1024, smooth=0,
                        desc=f"Read :{src_file}") as fin:
         # with open(src_file, "rb") as fin:
         count = 0
