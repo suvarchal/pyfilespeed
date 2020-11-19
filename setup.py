@@ -9,7 +9,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setuptools.setup(
     name="pyfilespeed",
-    version="0.0.6",
+    version="0.0.7",
     author="Suvarchal K. Cheedela",
     author_email="suvarchal.kumar@gmail.com",
     description="test file transfer speed",
