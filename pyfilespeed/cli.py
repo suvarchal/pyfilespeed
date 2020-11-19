@@ -5,7 +5,7 @@ import string
 from tqdm import tqdm
 from tqdm.utils import CallbackIOWrapper
 
-from pyfilespeed.utils import gen_random_bytes
+from .utils import gen_random_bytes
 
 # tqdm has an issue that it starts time at initanciation and all ops in between are counted.
 
